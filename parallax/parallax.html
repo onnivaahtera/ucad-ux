@@ -179,6 +179,7 @@
 				background-size: auto;
 				background-repeat: no-repeat;
 				background-position: bottom center;
+				perspective: 500px;
 			}
 
 			.layer1 {
@@ -191,8 +192,27 @@
 				background-image: url('images/ilu_03.png');
 			}
 			.layer4 {
+				transform-style: preserve-3d;
+				background-size: auto;
+				background-repeat: no-repeat;
+				background-position: bottom center;
+				transform-origin: 50% 70%;
+				animation: layer4-3d 8s ease-in-out infinite;
 				background-image: url('images/ilu_04.png');
 			}
+
+			@keyframes layer4-3d {
+				0%,
+				100% {
+					transform: perspective(700px) rotateX(0deg) rotateY(-3deg)
+						translate3d(0, 0, 0);
+				}
+				50% {
+					transform: perspective(700px) rotateX(4deg) rotateY(3deg)
+						translate3d(8px, -6px, 24px);
+				}
+			}
+
 			.layer5 {
 				background-image: url('images/ilu_05.png');
 			}
